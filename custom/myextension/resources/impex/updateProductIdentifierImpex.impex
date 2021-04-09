@@ -1,0 +1,2 @@
+UPDATE Product[batchmode=true];itemtype(code)[unique=true];name[lang=en,default="The Best Product Ever"]
+;Product;

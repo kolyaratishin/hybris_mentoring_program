@@ -72,6 +72,16 @@
 
 			</attributes>
 		</itemtype>
+		
+		<itemtype
+				code="MyGroup"
+				jaloclass="training.my.jalo.MyGroup"
+				extends="Usergroup"
+				generate="true"
+				autocreate="true"
+		>
+			<deployment table="MyGroup" typecode="20205"/>
+		</itemtype>
 
 	</itemtypes>
 </items>

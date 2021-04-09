@@ -1,0 +1,1 @@
+SELECT * FROM {Product AS p JOIN CatalogVersion AS cv ON {p:catalogVersion}={cv:PK}} WHERE {cv:version}='Staged'

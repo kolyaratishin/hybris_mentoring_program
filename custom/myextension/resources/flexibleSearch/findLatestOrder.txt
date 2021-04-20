@@ -1,0 +1,1 @@
+SELECT *FROM {Order AS o} ORDER BY {date} DESC limit 1

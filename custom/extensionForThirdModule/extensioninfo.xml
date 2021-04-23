@@ -5,8 +5,8 @@
            
     
     <extension abstractclassprefix="Generated" classprefix="ExtensionForThirdModule" jaloLogicFree="true" managername="ExtensionForThirdModuleManager" managersuperclass="de.hybris.platform.jalo.extension.Extension" name="extensionForThirdModule" usemaven="false">
-                  
-      
+
+        <requires-extension name="extensionForSecondModule" />
         
         <!-- for more information on maven managed libraries please consult https://wiki.hybris.com/x/Nq8sDQ -->
                                

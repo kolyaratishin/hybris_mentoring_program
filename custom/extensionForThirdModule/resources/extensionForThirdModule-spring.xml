@@ -82,5 +82,26 @@
         <property name="mediaService" ref="mediaService"/>
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
     </bean>
+
+    <bean id="myUserService" class="org.training.service.impl.MyUserServiceImpl">
+    </bean>
+
+    <bean id="orderCountPerformable" class="org.training.cronjob.OrderCountPerformable">
+        <property name="myService" ref="myService"/>
+    </bean>
+
+    <bean id="userCountPerformable" class="org.training.cronjob.UserCountPerformable">
+        <property name="myUserService" ref="myUserService"/>
+    </bean>
+
+    <bean id="userAndOrderCountPerformable" class="org.training.cronjob.UserAndOrderCountPerformable">
+        <property name="cronJobService" ref="cronJobService"/>
+    </bean>
+
+    <bean id="cronJobRunner" class="org.training.cronjob.CronjobRunner">
+        <property name="cronJobService" ref="cronJobService"/>
+        <property name="modelService" ref="modelService"/>
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+    </bean>
 			
 </beans>

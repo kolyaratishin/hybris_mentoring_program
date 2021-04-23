@@ -36,5 +36,41 @@
 			</attributes>
 		</itemtype>
 -->
+		<itemtype generate="true"
+				  code="OrderCountCronJob"
+				  jaloclass="org.training.jalo.OrderCountCronJob"
+				  extends="CronJob"
+				  autocreate="true"
+		>
+
+		</itemtype>
+
+		<itemtype generate="true"
+				  code="UserCountCronJob"
+				  jaloclass="org.training.jalo.UserCountCronJob"
+				  extends="CronJob"
+				  autocreate="true"
+		>
+
+		</itemtype>
+		<itemtype generate="true"
+				  code="UserAndOrderCountCronJob"
+				  jaloclass="org.training.jalo.UserAndOrderCountCronJob"
+				  extends="CronJob"
+				  autocreate="true"
+		>
+			<attributes>
+				<attribute qualifier="userCountCronJob" type="UserCountCronJob">
+					<persistence type="property">
+
+					</persistence>
+				</attribute>
+				<attribute qualifier="orderCountCronJob" type="OrderCountCronJob">
+					<persistence type="property">
+
+					</persistence>
+				</attribute>
+			</attributes>
+		</itemtype>
 	</itemtypes>
 </items>

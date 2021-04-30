@@ -103,5 +103,41 @@
         <property name="modelService" ref="modelService"/>
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
     </bean>
-			
+
+    <bean id="myProcess" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
+        <property name="resource" value="classpath:/processes/myProcess.xml"/>
+    </bean>
+
+	<bean id="printTimeAction" class="org.training.actions.PrintTimeAction" parent="abstractAction"/>
+
+    <bean id="addProductToCartInterceptor" class="org.training.interceptors.AddProductToCartInterceptor">
+        <property name="businessProcessService" ref="businessProcessService"/>
+    </bean>
+
+	<bean id="addProductInterceptorMapping"
+      class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="addProductToCartInterceptor"/>
+		<property name="typeCode" value="CartEntry"/>
+	</bean>
+
+    <bean id="removeCartInterceptor" class="org.training.interceptors.RemoveCartInterceptor">
+        <property name="businessProcessService" ref="businessProcessService"/>
+    </bean>
+
+	<bean id="removeProductInterceptorMapping"
+      class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="removeCartInterceptor"/>
+		<property name="typeCode" value="CartEntry"/>
+	</bean>
+
+	<bean id="placeOrderInterceptor" class="org.training.interceptors.PlaceOrderInterceptor">
+        	<property name="businessProcessService" ref="businessProcessService"/>
+    	</bean>
+
+	<bean id="placeOrderInterceptorMapping"
+      class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="placeOrderInterceptor"/>
+		<property name="typeCode" value="Order"/>
+	</bean>
+
 </beans>

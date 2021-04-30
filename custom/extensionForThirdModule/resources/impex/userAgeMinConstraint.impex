@@ -1,0 +1,2 @@
+INSERT_UPDATE MinConstraint;id[unique=true];severity(code,itemtype(code));active;annotation;descriptor(enclosingType(code),qualifier);message[lang=en];value
+;UserAgeMustNotBeLowerThan;ERROR:Severity;true;javax.validation.constraints.Min;User:age;User age must be higher or equal 21;21

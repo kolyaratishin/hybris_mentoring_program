@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<!--
+	ATTENTION: This is just an example file. You have to edit it according to your needs.
+-->
+
+<items 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:noNamespaceSchemaLocation="items.xsd">
+	<relations>
+		<relation code="CarToDriver" localized ="false" generate="true" autocreate="true">
+			<deployment table="CarToDriver" typecode="20303"/>
+			<sourceElement qualifier="cars" type="Car" cardinality="many">
+				<modifiers optional="true" read="true" write="true"/>
+			</sourceElement>
+			<targetElement qualifier="drivers" type="Driver" cardinality="many">
+				<modifiers optional="true" read="true" write="true"/>
+			</targetElement>
+		</relation>
+	</relations>
+
+	<itemtypes>
+		
+		<itemtype
+				code="Car"
+				generate="true"
+				autocreate="true"
+		>
+			<deployment table="Car" typecode="20301"/>
+			<attributes>
+				<attribute qualifier="name" type="java.lang.String">
+					<modifiers initial="true"/>
+					<persistence type="property"/>
+				</attribute>
+				<attribute qualifier="color" type="java.lang.String">
+					<modifiers initial="true"/>
+					<persistence type="property"/>
+				</attribute>
+				<attribute qualifier="year" type="java.lang.Integer">
+					<modifiers initial="true"/>
+					<persistence type="property"/>
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype
+				code="Driver"
+				generate="true"
+				autocreate="true"
+		>
+			<deployment table="Driver" typecode="20302"/>
+			<attributes>
+				<attribute qualifier="name" type="java.lang.String">
+					<modifiers initial="true"/>
+					<persistence type="property"/>
+				</attribute>
+				<attribute qualifier="dateOfBirth" type="java.util.Date">
+					<modifiers initial="true"/>
+					<persistence type="property"/>
+				</attribute>
+
+			</attributes>
+		</itemtype>
+
+	</itemtypes>
+</items>

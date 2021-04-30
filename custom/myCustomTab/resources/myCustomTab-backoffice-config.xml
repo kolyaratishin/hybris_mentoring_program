@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<config xmlns="http://www.hybris.com/cockpit/config"
+	xmlns:simple-search="http://www.hybris.com/cockpitng/config/simplesearch">
+
+		<context component="explorer-tree" merge-by="module">
+ 			<n:explorer-tree xmlns:n="http://www.hybris.com/cockpitng/config/explorertree">
+ 				<n:navigation-node id="MyTab">
+					 <n:type-node id="Cars" code="Car" />
+					 <n:type-node id="Drivers" code="Driver" />
+ 				</n:navigation-node>
+ 			</n:explorer-tree>
+		</context>
+<context type="Car" component="listview">
+ 		<list:list-view xmlns:list="http://www.hybris.com/cockpitng/component/listView">
+			<list:column qualifier="name"/>
+			<list:column qualifier="color"/>
+			<list:column qualifier="year"/>
+ 		</list:list-view>
+</context>
+<context type="Driver" component="listview">
+ 		<list:list-view xmlns:list="http://www.hybris.com/cockpitng/component/listView">
+			<list:column qualifier="name"/>
+			<list:column qualifier="dateOfBirth"/>
+ 		</list:list-view>
+</context>
+
+<context type="Car" component="simple-search" merge-by="type" parent="GenericItem">
+	<simple-search:simple-search>
+		<simple-search:field name="color" />
+	</simple-search:simple-search>
+</context>
+<context type="Driver" component="simple-search" merge-by="type" parent="GenericItem">
+	<simple-search:simple-search>
+		<simple-search:field name="name" />
+	</simple-search:simple-search>
+</context>
+
+</config>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+<process xmlns="http://www.hybris.de/xsd/processdefinition" name="myProcessDefinition" start="printTimeAfterProductAddedToCart">
+  <action id="printTimeAfterProductAddedToCart" bean="printTimeAction">
+    <transition name="OK" to="waitWhenOrderIsPlacedOrProductIsRemoved"/>
+    <transition name="NOK" to="error"/>         
+  </action> 
+
+  <wait id="waitWhenOrderIsPlacedOrProductIsRemoved" then="error" prependProcessCode='false'>
+      <case event="waitWhenOrderIsPlacedOrProductIsRemoved">
+        <choice id="removeProduct" then="printTimeAfterProductIsRemoved"/>
+        <choice id="placeOrder" then="printTimeAfterOrderIsPlaced"/>
+      </case>
+  </wait>
+
+  <action id="printTimeAfterProductIsRemoved" bean="printTimeAction">
+    <transition name="OK" to="productIsRemoved"/>
+	<transition name="NOK" to="error"/>         
+  </action>
+
+  <action id="printTimeAfterOrderIsPlaced" bean="printTimeAction">
+    <transition name="OK" to="productIsOrdered"/>
+    <transition name="NOK" to="error"/>
+  </action>
+
+  <end id="error" state="ERROR">Something was bad</end>
+  <end id="productIsRemoved" state="SUCCEEDED">Product is removed</end>
+  <end id="productIsOrdered" state="SUCCEEDED">Product is ordered</end>
+</process>

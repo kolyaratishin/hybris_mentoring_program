@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 23 апр. 2021 г., 11:01:02                   ---
+ * --- Generated at 27 апр. 2021 г., 12:56:30                   ---
  * ----------------------------------------------------------------
  */
 package org.training.constants;

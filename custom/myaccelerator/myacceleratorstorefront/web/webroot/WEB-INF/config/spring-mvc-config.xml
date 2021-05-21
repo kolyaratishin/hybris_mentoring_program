@@ -289,6 +289,8 @@
 		<entry key="checkout-login" value="/login/checkout"/>
 		<entry key="forgottenPassword" value="/login/pw/request"/>
 		<entry key="updatePassword" value="/my-account/update-password"/>
+		<entry key="myPageTemplate" value="/myPage"/>
+		<entry key="CountPageTemplate" value="/countPage"/>
 
 		<!--Configuration WCMS Mobile Page to URL -->
 		<entry key="mobile-homepage" value="/"/>

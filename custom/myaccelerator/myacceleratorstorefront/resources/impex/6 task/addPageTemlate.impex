@@ -1,0 +1,5 @@
+$contentCatalog=apparel-ukContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Online])[default=$contentCatalog:Online]
+
+INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;restrictedPageTypes(code);active[default=true]
+;;CountPageTemplate;Counts Page Template;ContentPage

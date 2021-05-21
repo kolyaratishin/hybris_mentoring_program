@@ -1,0 +1,7 @@
+$contentCatalog=apparel-ukContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Online])[default=$contentCatalog:Online]
+
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='CountPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;UserCount;userCount;;userCountSlot;true
+;;OrderCount;orderCount;;orderCountSlot;true

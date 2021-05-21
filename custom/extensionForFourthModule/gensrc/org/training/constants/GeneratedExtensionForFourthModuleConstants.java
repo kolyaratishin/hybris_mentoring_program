@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 6 мая 2021 г., 15:27:40                     ---
+ * --- Generated at 20 мая 2021 г., 17:47:59                    ---
  * ----------------------------------------------------------------
  */
 package org.training.constants;
@@ -14,6 +14,13 @@ package org.training.constants;
 public class GeneratedExtensionForFourthModuleConstants
 {
 	public static final String EXTENSIONNAME = "extensionForFourthModule";
+	public static class Attributes
+	{
+		public static class User
+		{
+			public static final String ISONLINE = "isOnline".intern();
+		}
+	}
 	
 	protected GeneratedExtensionForFourthModuleConstants()
 	{

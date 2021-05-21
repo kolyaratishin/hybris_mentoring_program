@@ -84,5 +84,21 @@
     </bean>
 
     <bean id="txService"   class="org.training.service.impl.TxServiceImpl"/>
-			
+
+
+	<bean name="productCacheRegion" class="de.hybris.platform.regioncache.region.impl.EHCacheRegion">
+				<constructor-arg name="name" value="productCacheRegion" />
+				<constructor-arg name="maxEntries" value="30000" />
+				<constructor-arg name="evictionPolicy" value="LRU" />
+				<property name="handledTypes">
+				<array>
+				<value>1</value>
+				</array>
+				</property>
+	</bean>
+
+	<bean id="yourCacheRegionRegistrar" class="de.hybris.platform.regioncache.region.CacheRegionRegistrar">
+       		<constructor-arg ref="productCacheRegion"/>
+   	</bean>
+	
 </beans>

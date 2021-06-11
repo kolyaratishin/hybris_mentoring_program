@@ -172,4 +172,18 @@
 		<property name="pagination" type="de.hybris.platform.commerceservices.search.pagedata.PaginationData"/>
 	</bean>
 
+	<bean class="de.hybris.platform.cmswebservices.dto.ProductWsDTO">
+		<property name="gbSize"
+				  type="java.lang.Double"/>
+	</bean>
+
+	<bean class="org.training.core.dto.UserDataList">
+		<property name="usersData"
+				  type="java.util.List&lt;de.hybris.platform.cmsfacades.data.UserData>"/>
+	</bean>
+
+	<bean class="org.training.core.dto.UserDataListWsDto">
+		<property name="usersDataWsDto"
+				  type="java.util.List&lt;de.hybris.platform.cmswebservices.dto.UserDataWsDTO>"/>
+	</bean>
 </beans>

@@ -10,7 +10,38 @@
 		http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 		
-	<context:annotation-config/> 
+	<context:annotation-config/>
+	<bean id="myUserFacade" class="org.training.facades.user.impl.UserFacadeImpl" >
+		<property name="userService" ref="myUserService"/>
+		<property name="converter" ref="myUserConverter"/>
+	</bean>
+
+	<bean id="myUserConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.cmsfacades.data.UserData"/>
+		<property name="populators">
+			<list merge="true">
+				<ref bean="myUserPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="myUserPopulator" class="org.training.facades.populators.UserPopulator"/>
+
+	<bean id="myProductFacade" class="org.training.facades.product.impl.ProductFacadeImpl" >
+		<property name="productService" ref="myProductService"/>
+		<property name="converter" ref="myProductConverter"/>
+	</bean>
+
+	<bean id="myProductConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.commercefacades.product.data.ProductData"/>
+		<property name="populators">
+			<list merge="true">
+				<ref bean="myProductPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="myProductPopulator" class="org.training.facades.populators.ProductPopulator"/>
 
 	<alias alias="simpleSuggestionFacade" name="defaultSimpleSuggestionFacade"/>
 	<bean id="defaultSimpleSuggestionFacade" class="org.training.facades.suggestion.impl.DefaultSimpleSuggestionFacade" >

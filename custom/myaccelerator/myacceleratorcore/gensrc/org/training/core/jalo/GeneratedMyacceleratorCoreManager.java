@@ -1,19 +1,22 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 20 мая 2021 г., 16:53:44                    ---
+ * --- Generated at 11 июн. 2021 г., 11:37:09                   ---
  * ----------------------------------------------------------------
  */
 package org.training.core.jalo;
 
+import de.hybris.platform.jalo.GenericItem;
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
 import de.hybris.platform.jalo.JaloBusinessException;
 import de.hybris.platform.jalo.JaloSystemException;
 import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.extension.Extension;
+import de.hybris.platform.jalo.product.Product;
 import de.hybris.platform.jalo.type.ComposedType;
 import de.hybris.platform.jalo.type.JaloGenericCreationException;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import org.training.core.constants.MyacceleratorCoreConstants;
@@ -32,6 +35,11 @@ public abstract class GeneratedMyacceleratorCoreManager extends Extension
 	static
 	{
 		final Map<String, Map<String, AttributeMode>> ttmp = new HashMap();
+		Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>();
+		tmp.put("gbSize", AttributeMode.INITIAL);
+		tmp.put("customSize", AttributeMode.INITIAL);
+		tmp.put("customSizeValue", AttributeMode.INITIAL);
+		ttmp.put("de.hybris.platform.jalo.product.Product", Collections.unmodifiableMap(tmp));
 		DEFAULT_INITIAL_ATTRIBUTES = ttmp;
 	}
 	@Override
@@ -148,6 +156,225 @@ public abstract class GeneratedMyacceleratorCoreManager extends Extension
 	public ElectronicsColorVariantProduct createElectronicsColorVariantProduct(final Map attributeValues)
 	{
 		return createElectronicsColorVariantProduct( getSession().getSessionContext(), attributeValues );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.customSize</code> attribute.
+	 * @return the customSize
+	 */
+	public Double getCustomSize(final SessionContext ctx, final Product item)
+	{
+		return (Double)item.getProperty( ctx, MyacceleratorCoreConstants.Attributes.Product.CUSTOMSIZE);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.customSize</code> attribute.
+	 * @return the customSize
+	 */
+	public Double getCustomSize(final Product item)
+	{
+		return getCustomSize( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.customSize</code> attribute. 
+	 * @return the customSize
+	 */
+	public double getCustomSizeAsPrimitive(final SessionContext ctx, final Product item)
+	{
+		Double value = getCustomSize( ctx,item );
+		return value != null ? value.doubleValue() : 0.0d;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.customSize</code> attribute. 
+	 * @return the customSize
+	 */
+	public double getCustomSizeAsPrimitive(final Product item)
+	{
+		return getCustomSizeAsPrimitive( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.customSize</code> attribute. 
+	 * @param value the customSize
+	 */
+	public void setCustomSize(final SessionContext ctx, final Product item, final Double value)
+	{
+		item.setProperty(ctx, MyacceleratorCoreConstants.Attributes.Product.CUSTOMSIZE,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.customSize</code> attribute. 
+	 * @param value the customSize
+	 */
+	public void setCustomSize(final Product item, final Double value)
+	{
+		setCustomSize( getSession().getSessionContext(), item, value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.customSize</code> attribute. 
+	 * @param value the customSize
+	 */
+	public void setCustomSize(final SessionContext ctx, final Product item, final double value)
+	{
+		setCustomSize( ctx, item, Double.valueOf( value ) );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.customSize</code> attribute. 
+	 * @param value the customSize
+	 */
+	public void setCustomSize(final Product item, final double value)
+	{
+		setCustomSize( getSession().getSessionContext(), item, value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.customSizeValue</code> attribute.
+	 * @return the customSizeValue
+	 */
+	public Double getCustomSizeValue(final SessionContext ctx, final Product item)
+	{
+		return (Double)item.getProperty( ctx, MyacceleratorCoreConstants.Attributes.Product.CUSTOMSIZEVALUE);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.customSizeValue</code> attribute.
+	 * @return the customSizeValue
+	 */
+	public Double getCustomSizeValue(final Product item)
+	{
+		return getCustomSizeValue( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.customSizeValue</code> attribute. 
+	 * @return the customSizeValue
+	 */
+	public double getCustomSizeValueAsPrimitive(final SessionContext ctx, final Product item)
+	{
+		Double value = getCustomSizeValue( ctx,item );
+		return value != null ? value.doubleValue() : 0.0d;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.customSizeValue</code> attribute. 
+	 * @return the customSizeValue
+	 */
+	public double getCustomSizeValueAsPrimitive(final Product item)
+	{
+		return getCustomSizeValueAsPrimitive( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.customSizeValue</code> attribute. 
+	 * @param value the customSizeValue
+	 */
+	public void setCustomSizeValue(final SessionContext ctx, final Product item, final Double value)
+	{
+		item.setProperty(ctx, MyacceleratorCoreConstants.Attributes.Product.CUSTOMSIZEVALUE,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.customSizeValue</code> attribute. 
+	 * @param value the customSizeValue
+	 */
+	public void setCustomSizeValue(final Product item, final Double value)
+	{
+		setCustomSizeValue( getSession().getSessionContext(), item, value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.customSizeValue</code> attribute. 
+	 * @param value the customSizeValue
+	 */
+	public void setCustomSizeValue(final SessionContext ctx, final Product item, final double value)
+	{
+		setCustomSizeValue( ctx, item, Double.valueOf( value ) );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.customSizeValue</code> attribute. 
+	 * @param value the customSizeValue
+	 */
+	public void setCustomSizeValue(final Product item, final double value)
+	{
+		setCustomSizeValue( getSession().getSessionContext(), item, value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.gbSize</code> attribute.
+	 * @return the gbSize - gbSize
+	 */
+	public Double getGbSize(final SessionContext ctx, final Product item)
+	{
+		return (Double)item.getProperty( ctx, MyacceleratorCoreConstants.Attributes.Product.GBSIZE);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.gbSize</code> attribute.
+	 * @return the gbSize - gbSize
+	 */
+	public Double getGbSize(final Product item)
+	{
+		return getGbSize( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.gbSize</code> attribute. 
+	 * @return the gbSize - gbSize
+	 */
+	public double getGbSizeAsPrimitive(final SessionContext ctx, final Product item)
+	{
+		Double value = getGbSize( ctx,item );
+		return value != null ? value.doubleValue() : 0.0d;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.gbSize</code> attribute. 
+	 * @return the gbSize - gbSize
+	 */
+	public double getGbSizeAsPrimitive(final Product item)
+	{
+		return getGbSizeAsPrimitive( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.gbSize</code> attribute. 
+	 * @param value the gbSize - gbSize
+	 */
+	public void setGbSize(final SessionContext ctx, final Product item, final Double value)
+	{
+		item.setProperty(ctx, MyacceleratorCoreConstants.Attributes.Product.GBSIZE,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.gbSize</code> attribute. 
+	 * @param value the gbSize - gbSize
+	 */
+	public void setGbSize(final Product item, final Double value)
+	{
+		setGbSize( getSession().getSessionContext(), item, value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.gbSize</code> attribute. 
+	 * @param value the gbSize - gbSize
+	 */
+	public void setGbSize(final SessionContext ctx, final Product item, final double value)
+	{
+		setGbSize( ctx, item, Double.valueOf( value ) );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.gbSize</code> attribute. 
+	 * @param value the gbSize - gbSize
+	 */
+	public void setGbSize(final Product item, final double value)
+	{
+		setGbSize( getSession().getSessionContext(), item, value );
 	}
 	
 	@Override

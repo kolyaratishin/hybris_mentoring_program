@@ -102,7 +102,29 @@
                     </attribute>
                 </attributes>
             </itemtype>
-        </typegroup>
 
+            <itemtype
+                    code="Product"
+                    autocreate="false"
+                    generate="false">
+                <attributes>
+                    <attribute qualifier="gbSize" type="java.lang.Double">
+                        <description>gbSize</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="customSize" type="java.lang.Double" autocreate="true" generate="true">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true"
+                                   initial="true" optional="true" unique="false" />
+                    </attribute>
+                    <attribute qualifier="customSizeValue" type="java.lang.Double" autocreate="true" generate="true">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true"
+                                   initial="true" optional="true" unique="false" />
+                    </attribute>
+                </attributes>
+
+            </itemtype>
+        </typegroup>
     </itemtypes>
 </items>

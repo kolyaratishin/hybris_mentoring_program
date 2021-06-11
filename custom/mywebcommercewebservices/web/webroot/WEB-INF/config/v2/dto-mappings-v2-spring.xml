@@ -230,4 +230,29 @@
 			</map>
 		</property>
 	</bean>
+
+	<bean id="myUserFieldMapper" parent="fieldMapper">
+		<property name="sourceClass"
+				  value="de.hybris.platform.cmsfacades.data.UserData"/>
+		<property name="destClass"
+				  value="de.hybris.platform.cmswebservices.dto.UserDataWsDTO"/>
+		<property name="fieldMapping">
+			<map>
+				<entry key="uid" value="uid"/>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="myProductFieldMapper" parent="fieldMapper">
+		<property name="sourceClass"
+				  value="de.hybris.platform.commercefacades.product.data.ProductData"/>
+		<property name="destClass"
+				  value="de.hybris.platform.cmswebservices.dto.ProductWsDTO"/>
+		<property name="fieldMapping">
+			<map>
+				<entry key="code" value="code"/>
+				<entry key="gbSize" value="gbSize"/>
+			</map>
+		</property>
+	</bean>
 </beans>

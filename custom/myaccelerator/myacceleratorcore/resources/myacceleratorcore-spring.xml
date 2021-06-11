@@ -23,7 +23,6 @@
 	       parent="abstractCoreSystemSetup"/>
 
 	<!-- Solr field value providers -->
-
 	<bean id="volumeAwareProductPriceValueProvider" class="org.training.core.search.solrfacetsearch.provider.impl.VolumeAwareProductPriceValueProvider"  parent="abstractPropertyFieldValueProvider">
         <property name="fieldNameProvider" ref="solrFieldNameProvider"/>
         <property name="priceService" ref="priceService"/>
@@ -537,5 +536,25 @@
 	<bean id="defaultCSTicketStagnationAction" class="org.training.core.retention.impl.DefaultCSTicketStagnationAction" parent="abstractExtensibleRemoveCleanupAction">
 		<property name="itemCleanupHooks" ref="csTicketRetentionHooks"/>
 		<property name="ticketBusinessService" ref="ticketBusinessService"/>
+	</bean>
+
+	<bean id="myUserDao" class="org.training.core.dao.impl.UserDaoImpl">
+		<property name="flexibleSearchService" ref="flexibleSearchService"/>
+	</bean>
+
+	<bean id="myProductDao" class="org.training.core.dao.impl.ProductDaoImpl">
+		<property name="flexibleSearchService" ref="flexibleSearchService"/>
+	</bean>
+
+	<bean id="myUserService" class="org.training.core.service.impl.UserServiceImpl">
+		<property name="userDao" ref="myUserDao"/>
+	</bean>
+
+	<bean id="myProductService" class="org.training.core.service.impl.ProductServiceImpl">
+		<property name="productDao" ref="myProductDao"/>
+	</bean>
+
+	<bean id="customSizeValueProvider" class="org.training.core.search.solrfacetsearch.provider.impl.CustomSizeValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>
 </beans>

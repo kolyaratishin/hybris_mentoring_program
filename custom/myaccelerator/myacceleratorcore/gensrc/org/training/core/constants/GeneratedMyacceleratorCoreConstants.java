@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 20 мая 2021 г., 16:53:44                    ---
+ * --- Generated at 11 июн. 2021 г., 11:37:09                   ---
  * ----------------------------------------------------------------
  */
 package org.training.core.constants;
@@ -24,7 +24,12 @@ public class GeneratedMyacceleratorCoreConstants
 	}
 	public static class Attributes
 	{
-		// no constants defined.
+		public static class Product
+		{
+			public static final String CUSTOMSIZE = "customSize".intern();
+			public static final String CUSTOMSIZEVALUE = "customSizeValue".intern();
+			public static final String GBSIZE = "gbSize".intern();
+		}
 	}
 	public static class Enumerations
 	{
